@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import logo_hospital from "../../img/"; 
+import logo_hospital from "../../img/logo_hospital.png";
+
 
 export default function Menu() {
   return (
