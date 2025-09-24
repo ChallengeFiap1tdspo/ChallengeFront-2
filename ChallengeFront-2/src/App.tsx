@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Cabecalho from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Cabecalho from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (

@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import Home from "./routes/Home/Home";
-import FAQ from "./routes/FAQ/Faq";
-import Contato from "./routes/Contato/Contato";
-import Equipe from "./routes/Equipe/Equipe";
+import Home from "./routes/Home";
+import FAQ from "./routes/Faq";
+import Contato from "./routes/Contato";
+import Equipe from "./routes/Equipe";
 
 // monta as rotas
 const router = createBrowserRouter([
