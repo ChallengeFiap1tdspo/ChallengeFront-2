@@ -6,7 +6,7 @@ import App from "./App.tsx";
 import Home from "../routes/Home/Home.tsx";
 import Faq from "../routes/FAQ/Faq.tsx";
 import Contato from "../routes/Contato/Contato.tsx";
-import Equipe from "../routes/Equipe/Equipe.tsx";
+import Equipe from "./routes/Equipe/Equipe.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/faq", element: <Faq /> },
       { path: "/contato", element: <Contato /> },
+      { path: "/equipe", element: <Equipe /> }
     ],
   },
 ]);

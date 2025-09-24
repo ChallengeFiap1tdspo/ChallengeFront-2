@@ -1,5 +1,5 @@
 import React from "react";
-import logoHospital from "../../img/logo_hospital.pnj";
+import logoHospital from "../../img/logo_hospital.png";
 
 const Header: React.FC = () => {
   const linkBase =
