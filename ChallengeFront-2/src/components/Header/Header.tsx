@@ -1,7 +1,8 @@
 import React from "react";
 import logoHospital from "../../img/logo_hospital.png";
 
-const Header: React.FC = () => {
+
+export default function Cabecalho() {
   const linkBase =
     "no-underline font-bold text-base px-6 py-2.5 transition-colors";
   const active = "bg-[#00a1e0] text-white";
@@ -14,29 +15,24 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header
-      className="w-full border-b-[1px] border-b-[#817f81]"
-      style={{ backgroundColor: "#ffffff" }}
-    >
+    <header className="w-full border-b border-b-[#817f81] bg-white">
       <div className="w-[90%] mx-auto flex items-center justify-start py-4">
         <a href="/" className="flex items-center flex-shrink-0">
-          <img
+        <img
             src={logoHospital}
             alt="Logo Hospital"
             className="max-h-[80px] w-auto"
+         
           />
         </a>
 
         <nav className="ml-4" aria-label="Menu principal">
-          <ul
-            className="flex items-center gap-8 whitespace-nowrap list-none m-0 p-0"
-            style={{ gap: "1.75rem" }}
-          >
+          <ul className="flex items-center gap-[1.75rem] whitespace-nowrap list-none m-0 p-0">
             <li>
-              <a href="/" className={getLinkClass("/")}>
-                Início
-              </a>
-            </li>
+            <a href="/" className={getLinkClass("/")}>
+            Início
+          </a>
+        </li>
             <li>
               <a href="/faq" className={getLinkClass("/faq")}>
                 FAQ
@@ -57,6 +53,4 @@ const Header: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
