@@ -61,7 +61,6 @@ export default function Faq() {
   return (
     <main className="flex flex-col min-h-screen bg-white">
       <section className="faq-container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col max-w-4xl">
-        {/* Título */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-700 mb-8 text-center">
           Perguntas Frequentes
         </h2>
