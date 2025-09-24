@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
+// import "..global.css";
+// import { Link } from "react-router-dom";
 
 const faqsHTML = [
   {
@@ -51,7 +51,7 @@ const faqsHTML = [
   },
 ];
 
-export default function Faq() {
+const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
@@ -59,78 +59,86 @@ export default function Faq() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen bg-white">
-      <section className="faq-container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-700 mb-8 text-center">
-          Perguntas Frequentes
-        </h2>
+    <div className="flex flex-col min-h-screen bg-white">
+      <main className="flex-grow">
+        <section className="faq-container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col max-w-4xl">
+          {/* Título */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-700 mb-8 text-center">
+            Perguntas Frequentes
+          </h2>
 
-        {faqsHTML.map((faq, index) => (
-          <div
-            key={index}
-            className="faq-item bg-blue-100 rounded-lg shadow-md overflow-hidden mb-5"
-          >
-            <button
-              className="faq-question w-full flex justify-between items-center px-5 py-4 font-bold transition-colors focus:outline-none"
-              onClick={() => handleClick(index)}
-              style={{
-                background: 'linear-gradient(135deg, #005b96 0%, #005b96 100%)',
-                color: 'white',
-                fontSize: '130%',
-              }}
-            >
-              <span className="text-white">{faq.pergunta}</span>
-              <span className="ml-2 text-2xl sm:text-3xl text-white">
-                {openIndex === index ? "➖" : "➕"}
-              </span>
-            </button>
-
+          {faqsHTML.map((faq, index) => (
             <div
-              className="faq-answer overflow-hidden transition-all duration-300 ease-in-out mt-2"
+              key={index}
+              className="faq-item bg-blue-100 rounded-lg shadow-md overflow-hidden"
               style={{
-                maxHeight: openIndex === index ? "500px" : "0px",
-                padding: openIndex === index ? "20px" : "0px",
-                backgroundColor: '#f0f9ff',
-                color: '#1e40af',
+                marginBottom: '5%', // espaçamento de 5% entre cada pergunta
               }}
             >
-              {faq.resposta}
-            </div>
-          </div>
-        ))}
+              <button
+                className="faq-question w-full flex justify-between items-center px-5 py-4 font-bold transition-colors focus:outline-none"
+                onClick={() => handleClick(index)}
+                style={{
+                  background: 'linear-gradient(135deg, #005b96 0%, #005b96 100%)',
+                  color: 'white',
+                  fontSize: '130%', // pergunta 30% maior
+                }}
+              >
+                <span className="text-white">{faq.pergunta}</span>
+                <span className="ml-2 text-2xl sm:text-3xl text-white">
+                  {openIndex === index ? "➖" : "➕"}
+                </span>
+              </button>
 
-        <div className="contact-promo p-6 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg text-center mt-4 shadow-md">
-          <h3 className="text-blue-900 text-lg font-semibold mb-2">
-            Não encontrou sua dúvida?
-          </h3>
-          <p className="mb-4 text-blue-800">
-            Entre em contato conosco e teremos prazer em ajudar!
-          </p>
-          <Link
-            to="/contato"
-            className="contact-link inline-block px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            style={{
-              background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-              color: 'white',
-              fontWeight: '600',
-              textDecoration: 'none',
-              border: '2px solid #1d4ed8',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background =
-                'linear-gradient(135deg, #00a1e0 0%, #00a1e0 100%)';
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background =
-                'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-          >
-            Fale Conosco
-          </Link>
-        </div>
-      </section>
-    </main>
+              <div
+                className="faq-answer overflow-hidden transition-all duration-300 ease-in-out mt-2"
+                style={{
+                  maxHeight: openIndex === index ? "500px" : "0px",
+                  padding: openIndex === index ? "20px" : "0px",
+                  backgroundColor: '#f0f9ff',
+                  color: '#1e40af',
+                }}
+              >
+                {faq.resposta}
+              </div>
+            </div>
+          ))}
+
+          <div className="contact-promo p-6 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg text-center mt-4 shadow-md">
+            <h3 className="text-blue-900 text-lg font-semibold mb-2">
+              Não encontrou sua dúvida?
+            </h3>
+            <p className="mb-4 text-blue-800">
+              Entre em contato conosco e teremos prazer em ajudar!
+            </p>
+            <a
+              href="contato.html"
+              className="contact-link inline-block px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              style={{
+                background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                color: 'white',
+                fontWeight: '600',
+                textDecoration: 'none',
+                border: '2px solid #1d4ed8',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background =
+                  'linear-gradient(135deg, #00a1e0 0%, #00a1e0 100%)';
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background =
+                  'linear-gradient(135deg, #00a1e0 0%, #00a1e0 100%)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              Fale Conosco
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
   );
-}
+};
+
+export default FAQ;
