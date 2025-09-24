@@ -1,4 +1,4 @@
-import ImagemIdosoNaTeleConsulta from "../../img/ImagemIdosoNaTeleConsulta";
+// import ImagemIdosoNaTeleConsulta from "../../img/ImagemIdosoNaTeleConsulta";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
 
       <section className="">
         <img
-          src={ImagemIdosoNaTeleConsulta}
+        //   src={ImagemIdosoNaTeleConsulta}
           alt="Paciente usando tablet para consulta online"
           className="w-full max-w-[700px] rounded-lg shadow-md transition-transform duration-300 ease-in-out md:ml-24 hover:scale-105"
         />

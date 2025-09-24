@@ -1,5 +1,5 @@
 import React from "react";
-import logoHospital from "../../img/logo_hospital.png";
+// import logoHospital from "../../img/logo_hospital.png";
 
 
 export default function Cabecalho() {
@@ -19,7 +19,7 @@ export default function Cabecalho() {
       <div className="w-[90%] mx-auto flex items-center justify-start py-4">
         <a href="/" className="flex items-center flex-shrink-0">
         <img
-            src={logoHospital}
+            // src={logoHospital}
             alt="Logo Hospital"
             className="max-h-[80px] w-auto"
          

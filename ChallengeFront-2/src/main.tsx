@@ -1,22 +1,25 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import App from "./App.tsx";
-import Home from "../routes/Home/Home.tsx";
-import Faq from "../routes/FAQ/Faq.tsx";
-import Contato from "../routes/Contato/Contato.tsx";
+// import "../../ChallengeFront-2/";
+
+import Home from "./routes/Home/Home.tsx";
+import FAQ from "./routes/FAQ/Faq.tsx";
+import Contato from "./routes/Contato/Contato.tsx";
 import Equipe from "./routes/Equipe/Equipe.tsx";
+// import Error from "./routes/Error/index.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    // errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/faq", element: <Faq /> },
+      { path: "/faq", element: <FAQ /> },
       { path: "/contato", element: <Contato /> },
-      { path: "/equipe", element: <Equipe /> }
+      { path: "/equipe", element: <Equipe /> },
     ],
   },
 ]);

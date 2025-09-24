@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Cabecalho from "./components/Header/Header";
-import Rodape from "./components/Footer/Footer";
-
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Cabecalho />
-      <Outlet />
-      <Rodape />
-    </>
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }
