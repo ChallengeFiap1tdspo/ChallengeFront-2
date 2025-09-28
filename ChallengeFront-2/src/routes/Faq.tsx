@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import "..global.css";
-// import { Link } from "react-router-dom";
+import "../../src/";
+import { Link } from "react-router-dom";
 
 const faqsHTML = [
   {
